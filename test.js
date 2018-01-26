@@ -88,4 +88,4 @@ siren2tva.getInfo('123456789', function (err, data) {
   console.info('= Return information about company with SIREN 012345678 (doesn\'t exist)');
   console.error(err);
 });
-// Return STARTX
+// Return Error
