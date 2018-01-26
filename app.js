@@ -2,24 +2,26 @@
 
 var checkSiret = require('siret');
 
-function convertTva(number){
-    if (isNaN(number)) return false;
-    var isSiret = false;
-    var isSiren = false;
-    if (checkSiret.isSIRET(number)) isSiret = true;
-    else if (checkSiret.isSIREN(number)) isSiren = true;
-    else return false;
-    
-//    var bal = 0;
-//    var total = 0;
-//    for (var i=size-1; i>=0; i--){
-//        var step = (number.charCodeAt(i)-48)*(bal+1);
-//        /*if (step>9) { step -= 9; }
-//         total += step;*/
-//        total += (step>9)?step-9:step;
-//        bal = 1-bal;
-//    }
-    return number;
+function convertTva(number) {
+  if (isNaN(number)) return false;
+  var isSiret = false;
+  var numero = cleanSiret(number);
+  if (checkSiret.isSIRET(number)) isSiret = true;
+  else if (checkSiret.isSIREN(number)) isSiret = false;
+  else return false;
+  if (isSiret) {
+    numero = numero.substring(0, 9);
+  }
+  var codeP = "FR";
+  var k = (12 + (3 * (parseInt(numero) % 97))) % 97;
+  var key = new String((k < 10) ? "0" + k : k);
+  return codeP + key + numero;
+}
+
+function cleanSiret(number) {
+  var numero = new String(number);
+  numero = numero.replace(/\s/g, '');
+  return numero;
 }
 
 module.exports = convertTva;

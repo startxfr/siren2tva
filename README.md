@@ -1,5 +1,5 @@
 # 
-# siren2tva ![siren2tva](https://img.shields.io/badge/latest-v0.0.1-blue.svg)
+# siren2tva ![siren2tva](https://img.shields.io/badge/latest-v0.0.2-blue.svg)
 
 Node module to convert siren /siret code into French VAT Number
 
@@ -38,6 +38,7 @@ If you run into difficulties installing or running siren2tva, you can [create an
 
 * [Node.js](https://nodejs.org/) - Runtime environement
 * [npm](https://www.npmjs.com/) - Packet manager
+* [siret module](https://github.com/steevelefort/siret) - SIRET module by Steeve LEFORT
 
 ## Contributing
 

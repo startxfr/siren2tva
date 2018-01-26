@@ -1,6 +1,6 @@
 {
   "name": "siren2tva",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple module to convert siren /siret code into French VAT Number. validation module for french SIRET and SIREN numbers",
   "author": "STARTX <dev@startx.fr> (https://www.startx.fr)",
   "homepage": "https://github.com/startxfr/siren2tva",
