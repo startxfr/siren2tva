@@ -1,5 +1,5 @@
 # 
-# siren2tva ![siren2tva](https://img.shields.io/badge/latest-v0.0.3-blue.svg)
+# siren2tva ![siren2tva](https://img.shields.io/badge/latest-v0.0.4-blue.svg)
 
 Node module to convert siren /siret code into French VAT Number. Check if a french company is recorded and 
 return detailled information about a french company. Include toolkit for checking if a SIREN or SIRET number is accurate
