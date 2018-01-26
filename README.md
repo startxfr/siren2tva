@@ -39,6 +39,11 @@ console.log(siren2tva.check.isSIREN('012345678'));
 // Return false :  : this is NOT a SIREN number
 ```
 
+siren2tva.getInfo('79465211500013',function(error, data) {
+   console.log(error, data);
+});
+// Return Json information : detailled information about a french company
+
 ## Troubleshooting
 
 If you run into difficulties installing or running siren2tva, you can [create an issue](https://github.com/startxfr/siren2tva/issues/new).
