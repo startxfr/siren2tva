@@ -163,5 +163,7 @@ module.exports.getInfoCapital = getCompanyInfoCapital;
 module.exports.getInfoLegal = getCompanyInfoLegal;
 module.exports.getInfoLastUpdate = getCompanyInfoLastUpdate;
 module.exports.cleanSiret = cleanSiret;
+module.exports.cleanSiren = cleanSiret;
+module.exports.cleanTva = cleanSiret;
 module.exports.check = checkSiret;
 module.exports.check.isTVA = isTVA;

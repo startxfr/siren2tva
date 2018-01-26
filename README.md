@@ -1,10 +1,25 @@
-# 
-# siren2tva ![siren2tva](https://img.shields.io/badge/latest-v0.0.5-blue.svg)
+# siren2tva ![siren2tva](https://img.shields.io/badge/latest-v0.0.6-blue.svg) [![last commit](https://img.shields.io/github/last-commit/startxfr/siren2tva.svg)](https://github.com/startxfr/siren2tva) [![licence](https://img.shields.io/github/license/startxfr/siren2tva.svg)](https://github.com/startxfr/siren2tva) 
 
-Node module to convert siren /siret code into French VAT Number. Check if a french company is recorded and 
-return detailled information about a french company. Include toolkit for checking if a SIREN or SIRET number is accurate
 
-[![last commit](https://img.shields.io/github/last-commit/startxfr/siren2tva.svg)](https://github.com/startxfr/siren2tva) [![licence](https://img.shields.io/github/license/startxfr/siren2tva.svg)](https://github.com/startxfr/siren2tva) 
+NodeJS module to manipulate French SIREN / SIRET or VAT Number in either way. 
+This module will also retrieve usefuls informations such as legal form, company name, capital 
+and adress from valid SIRET, SIREN or VAT numbers.
+
+Features included :
+- Convert SIRET to VAT number
+- Convert SIREN to VAT number
+- Convert VAT number to SIREN
+- Clean SIRET / Siret or VAT number form space between numbers
+- Check if a number is a valid SIRET
+- Check if a number is a valid SIREN
+- Check if a number is a valid VAT number
+- Return detailed informations about the company coresponding to a given SIREN / SIRET or VAT number
+- Return the name of the company coresponding to a given SIREN / SIRET or VAT number
+- Return the adress of the company coresponding to a given SIREN / SIRET or VAT number
+- Return the capital amount of the company coresponding to a given SIREN / SIRET or VAT number
+- Return the legal form of the company coresponding to a given SIREN / SIRET or VAT number
+- Return the last update recorded for the company coresponding to a given SIREN / SIRET or VAT number
+
 
 #### Installation
 

@@ -1,7 +1,7 @@
 {
   "name": "siren2tva",
-  "version": "0.0.5",
-  "description": "A simple module to convert siren /siret code into French VAT Number. validation module for french SIRET and SIREN numbers",
+  "version": "0.0.6",
+  "description": "NodeJS module to manipulate French SIREN / SIRET or VAT Number in either way. This module will also retrieve usefuls informations such as legal form, company name, capital and adress from valid SIRET, SIREN or VAT numbers",
   "author": "STARTX <dev@startx.fr> (https://www.startx.fr)",
   "homepage": "https://github.com/startxfr/siren2tva",
   "license": "GNU GPLv3",
