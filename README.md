@@ -1,5 +1,5 @@
 # 
-# siren2tva ![siren2tva](https://img.shields.io/badge/latest-v0.0.2-blue.svg)
+# siren2tva ![siren2tva](https://img.shields.io/badge/latest-v0.0.3-blue.svg)
 
 Node module to convert siren /siret code into French VAT Number
 
@@ -14,8 +14,17 @@ Node module to convert siren /siret code into French VAT Number
 ```js
 var siren2tva = require('siren2tva');
 
+// Set configuration to display long VAT numbers (with space)
+siren2tva({ longCode: true });
+
 console.log(siren2tva.getTva('79465211500013'));
-// Return FR72794652115 : this is a VAT number
+// Return FR72 794 652 115 : long VAT number
+
+// Set configuration to display short VAT numbers (default)
+siren2tva({ longCode: false });
+
+console.log(siren2tva.getTva('79465211500013'));
+// Return FR72794652115 : short VAT number
 
 console.log(siren2tva.check.isSIRET('79465211500013'));
 // Return true : this is a SIRET number
@@ -39,6 +48,7 @@ If you run into difficulties installing or running siren2tva, you can [create an
 * [Node.js](https://nodejs.org/) - Runtime environement
 * [npm](https://www.npmjs.com/) - Packet manager
 * [siret module](https://github.com/steevelefort/siret) - SIRET module by Steeve LEFORT
+* [firmAPI](https://firmapi.com/documentation#introduction) - French company information API
 
 ## Contributing
 

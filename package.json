@@ -1,6 +1,6 @@
 {
   "name": "siren2tva",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple module to convert siren /siret code into French VAT Number. validation module for french SIRET and SIREN numbers",
   "author": "STARTX <dev@startx.fr> (https://www.startx.fr)",
   "homepage": "https://github.com/startxfr/siren2tva",
@@ -31,7 +31,7 @@
   ],
   "main": "app.js",
   "scripts": {
-    "test": "echo \"WARN: no test specified\" && exit 1",
+    "test": "node test.js",
     "start": "node app.js"
   },
   "repository": {
@@ -42,6 +42,8 @@
     "url": "https://github.com/startxfr/siren2tva/issues"
   },
   "dependencies": {
-    "siret": "~1.0.1"
+    "siret": "~1.0.1",
+    "merge": "~1.2.0",
+    "request": "~2.83.0"
   }
 }
