@@ -1,8 +1,8 @@
-# siren2tva ![siren2tva](https://img.shields.io/badge/latest-v0.0.6-blue.svg) [![last commit](https://img.shields.io/github/last-commit/startxfr/siren2tva.svg)](https://github.com/startxfr/siren2tva) [![licence](https://img.shields.io/github/license/startxfr/siren2tva.svg)](https://github.com/startxfr/siren2tva) 
+# siren2tva ![siren2tva](https://img.shields.io/badge/latest-v1.0.0-blue.svg) [![last commit](https://img.shields.io/github/last-commit/startxfr/siren2tva.svg)](https://github.com/startxfr/siren2tva) [![licence](https://img.shields.io/github/license/startxfr/siren2tva.svg)](https://github.com/startxfr/siren2tva) 
 
 
 NodeJS module to manipulate French SIREN / SIRET or VAT Number in either way. 
-This module will also retrieve usefuls informations such as legal form, company name, capital 
+This module will also retrieve legals informations such as legal form, company name, capital 
 and adress from valid SIRET, SIREN or VAT numbers.
 
 Features included :
@@ -13,7 +13,7 @@ Features included :
 - Check if a number is a valid SIRET
 - Check if a number is a valid SIREN
 - Check if a number is a valid VAT number
-- Return detailed informations about the company coresponding to a given SIREN / SIRET or VAT number
+- Return legals informations about the company coresponding to a given SIREN / SIRET or VAT number
 - Return the name of the company coresponding to a given SIREN / SIRET or VAT number
 - Return the adress of the company coresponding to a given SIREN / SIRET or VAT number
 - Return the capital amount of the company coresponding to a given SIREN / SIRET or VAT number
@@ -21,100 +21,113 @@ Features included :
 - Return the last update recorded for the company coresponding to a given SIREN / SIRET or VAT number
 
 
-#### Installation
+## Installation
 
 ```bash
 npm install siren2tva --save
 ```
 
-#### Usage
+## Usage
 
+### Load module
 ```js
 var siren2tva = require('siren2tva');
+```
 
-console.info('==== TEST CONVERTIONS ==============');
-console.info('= Convert SIRET 44997052400038 into VAT code');
+### Configure module
+```js
+siren2tva({ longCode: true });
+```
+
+### Convert SIRET into VAT code
+```js
 console.log(siren2tva.siret2tva('44997052400038'));
 // Return FR26449970524
-console.info('= Convert SIREN 449970524 into VAT code');
+```
+
+### Convert SIREN into VAT code
+```js
 console.log(siren2tva.siren2tva('449970524'));
 // Return FR26449970524
-console.info('= Convert VAT FR26449970524 into SIREN');
+```
+
+### Convert VAT code into SIREN
+```js
 console.log(siren2tva.tva2siren('FR26449970524'));
 // Return 449970524
+```
 
-console.info('==== TEST CHECK NUMBERS ============');
-console.info('= Check if SIRET 44997052400038 is valid (should return yes)');
+### Check if SIRET is valid
+```js
 console.log(siren2tva.check.isSIRET('44997052400038'));
 // Return true
-
-console.info('= Check if SIREN 449970524 is valid (should return yes)');
-console.log(siren2tva.check.isSIREN('449970524'));
-// Return true
-
-console.info('= Check if VAT FR26449970524 is valid (should return yes)');
-console.log(siren2tva.check.isTVA('FR26449970524'));
-// Return true
-
-console.info('= Check if SIRET 01234567890123 is valid (should return no)');
 console.log(siren2tva.check.isSIRET('01234567890123'));
 // Return false
+```
 
-console.info('= Check if SIREN 012345678 is valid (should return no)');
+### Check if SIREN is valid
+```js
+console.log(siren2tva.check.isSIREN('449970524'));
+// Return true
 console.log(siren2tva.check.isSIREN('012345678'));
 // Return false
+```
 
-console.info('= Check if VAT FR00012345678 is valid (should return no)');
+### Check if VAT code is valid
+```js
+console.log(siren2tva.check.isTVA('FR26449970524'));
+// Return true
 console.log(siren2tva.check.isTVA('FR00012345678'));
 // Return false
+```
 
-console.info('==== TEST GET CONPANY INFO =========');
-siren2tva.getInfoNom('449970524', function (err, data) {
-  console.info('= Get name of the company with SIREN 449970524');
-  console.log(data);
+### Get name of the company coresponding to a SIREN
+```js
+siren2tva.getInfoNom('449970524', function (err, name) {
+  console.log(name);
 });
 // Return STARTX
+```
 
-siren2tva.getInfoAdress('449970524', function (err, data) {
-  console.info('= Get adress of the company with SIREN 449970524');
-  console.info(data);
+### Get the adress of the company coresponding to a SIREN
+```js
+
+siren2tva.getInfoAdress('449970524', function (err, adress) {
+  console.info(adress);
 });
 // Return { add: '171 Avenue Georges Clémenceau', cp: '92000', ville: 'Nanterre' }
+```
 
-siren2tva.getInfoCapital('449970524', function (err, data) {
-  console.info('= Get capital of the company with SIREN 449970524');
-  console.log(data);
+### Get capital amount of the company coresponding to a SIREN
+```js
+siren2tva.getInfoCapital('449970524', function (err, capital) {
+  console.log(capital);
 });
 // Return 50005
+```
 
-siren2tva.getInfoLegal('449970524', function (err, data) {
-  console.info('= Get legal form of the company with SIREN 449970524');
-  console.log(data);
+### Get legal form of the company coresponding to a SIREN
+```js
+siren2tva.getInfoLegal('449970524', function (err, legal) {
+  console.log(legal);
 });
 // Return SARL
+```
 
-siren2tva.getInfoLastUpdate('449970524', function (err, data) {
-  console.info('= Get last legal update of the company with SIREN 449970524');
-  console.log(data);
+### Get last official public registry update of the company coresponding to a SIREN
+```js
+siren2tva.getInfoLastUpdate('449970524', function (err, date) {
+  console.log(date);
 });
 // Return 2013-11-03
+```
 
-siren2tva.getInfo('449970524', function (err, data) {
-  console.info('= Return information about company with SIREN 449970524 (exist)');
-  if (err) {
-    console.error(err);
-  }
-  else {
-    console.log(data);
-  }
+### Get all legals informations about the company coresponding to a SIREN
+```js
+siren2tva.getInfo('449970524', function (err, company) {
+  return (err) ? console.error(err) : console.log(company);
 });
 // Return {company}
-
-siren2tva.getInfo('123456789', function (err, data) {
-  console.info('= Return information about company with SIREN 012345678 (doesn\'t exist)');
-  console.error(err);
-});
-// Return Error
 ```
 
 ## Troubleshooting
