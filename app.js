@@ -74,9 +74,9 @@ function getCompanyInfo(number, callback) {
     }
   };
   var cb = callback || defaultCallback;
-  var request = require('request');
+  var urllib = require('urllib');
   var url = config.firmApiBase + config.firmApiSearch;
-  request({url: url + numero, json: true}, function (error, response, body) {
+  urllib.request( url + numero, {dataType : "json"}, function (error, response, body) {
     if (error) {
       cb(error.message);
     }

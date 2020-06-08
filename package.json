@@ -1,6 +1,6 @@
 {
   "name": "siren2tva",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "NodeJS module to manipulate French SIREN / SIRET or VAT Number in either way. This module will also retrieve usefuls informations such as legal form, company name, capital and adress from valid SIRET, SIREN or VAT numbers",
   "author": "STARTX <dev@startx.fr> (https://www.startx.fr)",
   "homepage": "https://github.com/startxfr/siren2tva",
@@ -42,8 +42,8 @@
     "url": "https://github.com/startxfr/siren2tva/issues"
   },
   "dependencies": {
-    "siret": "~1.0.1",
-    "merge": "~1.2.0",
-    "request": "~2.83.0"
+    "merge": "^1.2.1",
+    "urllib": "~2.35.0",
+    "siret": "~1.0.1"
   }
 }

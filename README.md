@@ -1,4 +1,4 @@
-# siren2tva ![siren2tva](https://img.shields.io/badge/latest-v1.0.0-blue.svg) [![last commit](https://img.shields.io/github/last-commit/startxfr/siren2tva.svg)](https://github.com/startxfr/siren2tva) [![licence](https://img.shields.io/github/license/startxfr/siren2tva.svg)](https://github.com/startxfr/siren2tva) 
+# siren2tva ![siren2tva](https://img.shields.io/badge/latest-v1.0.1-blue.svg) [![last commit](https://img.shields.io/github/last-commit/startxfr/siren2tva.svg)](https://github.com/startxfr/siren2tva) [![licence](https://img.shields.io/github/license/startxfr/siren2tva.svg)](https://github.com/startxfr/siren2tva) 
 
 
 NodeJS module to manipulate French SIREN / SIRET or VAT Number in either way. 
