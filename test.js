@@ -45,47 +45,42 @@ console.log(siren2tva.check.isTVA('FR00012345678'));
 console.info('==== TEST GET CONPANY INFO =========');
 siren2tva.getInfoNom('449970524', function (err, data) {
   console.info('= Get name of the company with SIREN 449970524');
-  console.log(data);
+  (err) ? console.error(err) : console.log(data);
 });
 // Return STARTX
 
 siren2tva.getInfoAdress('449970524', function (err, data) {
   console.info('= Get adress of the company with SIREN 449970524');
-  console.info(data);
+  (err) ? console.error(err) : console.log(data);
 });
 // Return { add: '171 Avenue Georges Clémenceau', cp: '92000', ville: 'Nanterre' }
 
 siren2tva.getInfoCapital('449970524', function (err, data) {
   console.info('= Get capital of the company with SIREN 449970524');
-  console.log(data);
+  (err) ? console.error(err) : console.log(data);
 });
 // Return 50005
 
 siren2tva.getInfoLegal('449970524', function (err, data) {
   console.info('= Get legal form of the company with SIREN 449970524');
-  console.log(data);
+  (err) ? console.error(err) : console.log(data);
 });
 // Return SARL
 
 siren2tva.getInfoLastUpdate('449970524', function (err, data) {
   console.info('= Get last legal update of the company with SIREN 449970524');
-  console.log(data);
+  (err) ? console.error(err) : console.log(data);
 });
 // Return 2013-11-03
 
 siren2tva.getInfo('449970524', function (err, data) {
   console.info('= Return information about company with SIREN 449970524 (exist)');
-  if (err) {
-    console.error(err);
-  }
-  else {
-    console.log(data);
-  }
+  (err) ? console.error(err) : console.log(data);
 });
 // Return {company}
 
 siren2tva.getInfo('123456789', function (err, data) {
   console.info('= Return information about company with SIREN 012345678 (doesn\'t exist)');
-  console.error(err);
+  (err) ? console.error(err) : console.log(data);
 });
 // Return Error

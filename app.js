@@ -1,10 +1,25 @@
 /* global module, require */
 
+
+/* https://api.insee.fr/catalogue/site/themes/wso2/subthemes/insee/pages/sign-up.jag */
+
+
+
+
+
+
+// curl -X GET --header 'Accept: application/json' --header 'Authorization: Bearer cb4907c0-b40e-3b17-8f38-be3ea6266b1b' 'https://api.insee.fr/entreprises/sirene/V3/siren/449970524'
+
+
+
+
+
 var checkSiret = require('siret');
 var config = {
   codePays: "FR",
-  firmApiBase: "https://firmapi.com/api/v1/",
-  firmApiSearch: "companies/",
+  inseeApiBase: "https://entreprise.data.gouv.fr/api/sirene/v3/",
+  inseeApiSearchSiren: "unites_legales/",
+  inseeApiSearchSiret: "etablissements/",
   longCode: false
 };
 
@@ -59,38 +74,36 @@ function getCompanyInfo(number, callback) {
   if (isNaN(number)) return false;
   var isSiret = false;
   var numero = cleanSiret(number);
-  if (checkSiret.isSIRET(number)) isSiret = true;
-  else if (checkSiret.isSIREN(number)) isSiret = false;
-  else return false;
-  if (isSiret) {
-    numero = numero.substring(0, 9);
-  }
   var defaultCallback = function (err, data) {
-    if (err) {
-      console.error(err);
-    }
-    else {
-      console.log(data);
-    }
+    (err) ? console.error(err) : console.log(data);
   };
   var cb = callback || defaultCallback;
+  config.apiPath = config.inseeApiSearchSiren + numero;
+  if (checkSiret.isSIRET(number)) isSiret = true;
+  else if (checkSiret.isSIREN(number)) isSiret = false;
+  else return cb(number +" is not a valid siret or siren number");
+  if (isSiret) {
+    config.apiPath = config.inseeApiSearchSiret + numero;
+  }
   var urllib = require('urllib');
-  var url = config.firmApiBase + config.firmApiSearch;
-  urllib.request( url + numero, {dataType : "json"}, function (error, response, body) {
+  var url = config.inseeApiBase + config.apiPath;
+  var options = {
+    dataType : "json"
+  }
+  if (config.inseeToken != "") {
+    options.headers = {
+          Authorization: 'Bearer ' + config.inseeToken
+       }
+  }
+  urllib.request( url, options, function (error, body, response) {
     if (error) {
       cb(error.message);
-    }
-    else if (body && body.status === "error") {
-      cb("error api : " + body.message);
     }
     else if (!response || response.statusCode !== 200) {
       cb("error http code : " + response.statusCode);
     }
-    else if (!body || body.status !== "success") {
-      cb("unknown error api : " + body.status);
-    }
     else {
-      cb(null, body.company);
+      cb(null, isSiret ? body.etablissement : body.unite_legale.etablissement_siege);
     }
   });
 }
@@ -100,7 +113,7 @@ function getCompanyInfoNom(number, callback) {
       callback(err);
     }
     else {
-      callback(null,data.names.best);
+      callback(null,data.denomination_usuelle);
     }
   });
 }
@@ -110,7 +123,11 @@ function getCompanyInfoAdress(number, callback) {
       callback(err);
     }
     else {
-      callback(null,{add: data.address,cp: data.postal_code,ville: data.city} );
+      var add = data.numero_voie + ' '
+      add += data.indice_repetition != '' ? data.indice_repetition + ' ' : '';
+      add += data.type_voie != '' ? data.type_voie + ' ' : '';
+      add += data.libelle_voie != '' ? data.libelle_voie + ' ' : '';
+      callback(null,{add: add,cp: data.code_postal,ville: data.libelle_commune} );
     }
   });
 }
@@ -120,7 +137,7 @@ function getCompanyInfoCapital(number, callback) {
       callback(err);
     }
     else {
-      callback(null,data.capital);
+      callback(null,data.nomenclature_activite_principale);
     }
   });
 }
@@ -130,7 +147,7 @@ function getCompanyInfoLegal(number, callback) {
       callback(err);
     }
     else {
-      callback(null,data.legal_form);
+      callback(null,data.nomenclature_activite_principale);
     }
   });
 }
@@ -140,7 +157,7 @@ function getCompanyInfoLastUpdate(number, callback) {
       callback(err);
     }
     else {
-      callback(null,data.last_legal_update);
+      callback(null,data.date_dernier_traitement);
     }
   });
 }

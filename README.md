@@ -1,11 +1,11 @@
 # siren2tva ![siren2tva](https://img.shields.io/badge/latest-v1.0.1-blue.svg) [![last commit](https://img.shields.io/github/last-commit/startxfr/siren2tva.svg)](https://github.com/startxfr/siren2tva) [![licence](https://img.shields.io/github/license/startxfr/siren2tva.svg)](https://github.com/startxfr/siren2tva) 
 
-
 NodeJS module to manipulate French SIREN / SIRET or VAT Number in either way. 
 This module will also retrieve legals informations such as legal form, company name, capital 
 and adress from valid SIRET, SIREN or VAT numbers.
 
 Features included :
+
 - Convert SIRET to VAT number
 - Convert SIREN to VAT number
 - Convert VAT number to SIREN
@@ -20,7 +20,6 @@ Features included :
 - Return the legal form of the company coresponding to a given SIREN / SIRET or VAT number
 - Return the last update recorded for the company coresponding to a given SIREN / SIRET or VAT number
 
-
 ## Installation
 
 ```bash
@@ -30,34 +29,40 @@ npm install siren2tva --save
 ## Usage
 
 ### Load module
+
 ```js
 var siren2tva = require('siren2tva');
 ```
 
 ### Configure module
+
 ```js
 siren2tva({ longCode: true });
 ```
 
 ### Convert SIRET into VAT code
+
 ```js
 console.log(siren2tva.siret2tva('44997052400038'));
 // Return FR26449970524
 ```
 
 ### Convert SIREN into VAT code
+
 ```js
 console.log(siren2tva.siren2tva('449970524'));
 // Return FR26449970524
 ```
 
 ### Convert VAT code into SIREN
+
 ```js
 console.log(siren2tva.tva2siren('FR26449970524'));
 // Return 449970524
 ```
 
 ### Check if SIRET is valid
+
 ```js
 console.log(siren2tva.check.isSIRET('44997052400038'));
 // Return true
@@ -66,6 +71,7 @@ console.log(siren2tva.check.isSIRET('01234567890123'));
 ```
 
 ### Check if SIREN is valid
+
 ```js
 console.log(siren2tva.check.isSIREN('449970524'));
 // Return true
@@ -74,6 +80,7 @@ console.log(siren2tva.check.isSIREN('012345678'));
 ```
 
 ### Check if VAT code is valid
+
 ```js
 console.log(siren2tva.check.isTVA('FR26449970524'));
 // Return true
@@ -82,6 +89,7 @@ console.log(siren2tva.check.isTVA('FR00012345678'));
 ```
 
 ### Get name of the company coresponding to a SIREN
+
 ```js
 siren2tva.getInfoNom('449970524', function (err, name) {
   console.log(name);
@@ -90,6 +98,7 @@ siren2tva.getInfoNom('449970524', function (err, name) {
 ```
 
 ### Get the adress of the company coresponding to a SIREN
+
 ```js
 
 siren2tva.getInfoAdress('449970524', function (err, adress) {
@@ -99,6 +108,7 @@ siren2tva.getInfoAdress('449970524', function (err, adress) {
 ```
 
 ### Get capital amount of the company coresponding to a SIREN
+
 ```js
 siren2tva.getInfoCapital('449970524', function (err, capital) {
   console.log(capital);
@@ -107,6 +117,7 @@ siren2tva.getInfoCapital('449970524', function (err, capital) {
 ```
 
 ### Get legal form of the company coresponding to a SIREN
+
 ```js
 siren2tva.getInfoLegal('449970524', function (err, legal) {
   console.log(legal);
@@ -115,6 +126,7 @@ siren2tva.getInfoLegal('449970524', function (err, legal) {
 ```
 
 ### Get last official public registry update of the company coresponding to a SIREN
+
 ```js
 siren2tva.getInfoLastUpdate('449970524', function (err, date) {
   console.log(date);
@@ -123,6 +135,7 @@ siren2tva.getInfoLastUpdate('449970524', function (err, date) {
 ```
 
 ### Get all legals informations about the company coresponding to a SIREN
+
 ```js
 siren2tva.getInfo('449970524', function (err, company) {
   return (err) ? console.error(err) : console.log(company);
@@ -136,10 +149,10 @@ If you run into difficulties installing or running siren2tva, you can [create an
 
 ## Built With
 
-* [Node.js](https://nodejs.org/) - Runtime environement
-* [npm](https://www.npmjs.com/) - Packet manager
-* [siret module](https://github.com/steevelefort/siret) - SIRET module by Steeve LEFORT
-* [firmAPI](https://firmapi.com/documentation#introduction) - French company information API
+- [Node.js](https://nodejs.org/) - Runtime environement
+- [npm](https://www.npmjs.com/) - Packet manager
+- [siret module](https://github.com/steevelefort/siret) - SIRET module by Steeve LEFORT
+- [OpenData GovFr](https://entreprise.data.gouv.fr) - Opendata platform fro the French State database
 
 ## Contributing
 
