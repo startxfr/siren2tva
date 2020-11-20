@@ -1,19 +1,5 @@
 /* global module, require */
 
-
-/* https://api.insee.fr/catalogue/site/themes/wso2/subthemes/insee/pages/sign-up.jag */
-
-
-
-
-
-
-// curl -X GET --header 'Accept: application/json' --header 'Authorization: Bearer cb4907c0-b40e-3b17-8f38-be3ea6266b1b' 'https://api.insee.fr/entreprises/sirene/V3/siren/449970524'
-
-
-
-
-
 var checkSiret = require('siret');
 var config = {
   codePays: "FR",
