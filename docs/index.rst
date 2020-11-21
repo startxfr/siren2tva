@@ -1,8 +1,8 @@
-########
-$project
-########
+#########
+siren2tva
+#########
 
-$project is a NodeJS module to manipulate French SIREN / SIRET or VAT Number in either way.
+siren2tva is a NodeJS module to manipulate French SIREN / SIRET or VAT Number in either way.
 This module will also retrieve legals informations such as legal form, company name, capital
 and adress from valid SIRET, SIREN or VAT numbers using French State OpenData Api.
 
@@ -29,7 +29,7 @@ Features
 Installation
 ************
 
-Install $project by running:
+Install siren2tva by running:
 
 .. code-block:: bash
 
@@ -53,7 +53,7 @@ load the library into your nodejs code:
 Configure module
 ================
 
-Create an instance of $project with the given config. This step is optional as default setting are sufficients.
+Create an instance of siren2tva with the given config. This step is optional as default setting are sufficients.
 
 .. code-block:: javascript
 
@@ -218,8 +218,8 @@ Contributing
 
 Read the `contributing guide`_ for details on our code of conduct, and the process for submitting pull requests to us.
 
-- Issue Tracker: github.com/$project/$project/issues
-- Source Code: github.com/$project/$project
+- Issue Tracker: github.com/startxfr/siren2tva/issues
+- Source Code: github.com/startxfr/siren2tva
 
 
 *******
