@@ -19,7 +19,7 @@ and adress from valid SIRET, SIREN or VAT numbers using French State OpenData Ap
 .. |licence| image:: https://img.shields.io/github/license/startxfr/siren2tva.svg
    :align: middle
    :alt: licence
-.. _licence: https://github.com/startxfr/siren2tva
+.. _licence: https://github.com/startxfr/siren2tva/blob/master/LICENSE
 
 ********
 Features
