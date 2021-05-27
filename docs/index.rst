@@ -263,5 +263,5 @@ References
 .. _`OpenData GovFr`: https://entreprise.data.gouv.fr
 .. _`contributing guide`: https://github.com/startxfr/sxapi-core/tree/master/docs/5.Contribute.md
 .. _`startx`: https://www.startx.fr
-.. _`CONTRIBUTORS.md`: https://github.com/startxfr/sxapi-core/tree/master/docs/CONTRIBUTORS.md).
+.. _`CONTRIBUTORS.md`: https://github.com/startxfr/sxapi-core/tree/master/docs/CONTRIBUTORS.md
 .. _`LICENSE`: https://github.com/startxfr/siren2tva/tree/master/LICENSE
