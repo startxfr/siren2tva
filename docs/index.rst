@@ -8,7 +8,7 @@ and adress from valid SIRET, SIREN or VAT numbers using French State OpenData Ap
 
 |siren2tva|_ |last|_ |licence|_
 
-.. |siren2tva| image:: https://img.shields.io/badge/latest-v1.1.6-blue.svg
+.. |siren2tva| image:: https://img.shields.io/badge/latest-v1.2.0-blue.svg
    :align: middle
    :alt: sxapi release
 .. _siren2tva: https://www.npmjs.com/package/siren2tva
