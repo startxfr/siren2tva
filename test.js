@@ -42,7 +42,7 @@ console.info('= Check if VAT FR00012345678 is valid (should return no)');
 console.log(siren2tva.check.isTVA('FR00012345678'));
 // Return false
 
-console.info('==== TEST GET CONPANY INFO =========');
+console.info('==== TEST GET COMPANY INFO =========');
 siren2tva.getInfoNom('449970524', function (err, data) {
   console.info('= Get name of the company with SIREN 449970524');
   (err) ? console.error(err) : console.log(data);

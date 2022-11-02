@@ -1,6 +1,28 @@
 /* global module, require */
 
-var checkSiret = require('siret');
+/* backport of the https://github.com/steevelefort/siret code */
+var checkSiret = {
+  isSIRET: function(siret){
+    return this.verify(siret,14);
+  },
+  isSIREN: function(siren){
+    return this.verify(siren,9)
+  },
+  verify: function (number, size){
+    if (isNaN(number) || number.length!=size) return false;
+    var bal = 0;
+    var total = 0;
+    for (var i=size-1; i>=0; i--){
+        var step = (number.charCodeAt(i)-48)*(bal+1);
+        /*if (step>9) { step -= 9; }
+         total += step;*/
+        total += (step>9)?step-9:step;
+        bal = 1-bal;
+    }
+    return (total%10==0)?true:false;
+  }
+};
+
 var config = {
   codePays: "FR",
   // Deprecated and should mode to https://data.inpi.fr/
