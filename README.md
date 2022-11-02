@@ -1,4 +1,4 @@
-# siren2tva ![siren2tva](https://img.shields.io/badge/latest-v1.1.5-blue.svg) [![last commit](https://img.shields.io/github/last-commit/startxfr/siren2tva.svg)](https://github.com/startxfr/siren2tva) [![licence](https://img.shields.io/github/license/startxfr/siren2tva.svg)](https://github.com/startxfr/siren2tva) [![Doc](https://readthedocs.org/projects/siren2tva/badge)](https://siren2tva.readthedocs.io)
+# siren2tva ![siren2tva](https://img.shields.io/badge/latest-v1.1.6-blue.svg) [![last commit](https://img.shields.io/github/last-commit/startxfr/siren2tva.svg)](https://github.com/startxfr/siren2tva) [![licence](https://img.shields.io/github/license/startxfr/siren2tva.svg)](https://github.com/startxfr/siren2tva) [![Doc](https://readthedocs.org/projects/siren2tva/badge)](https://siren2tva.readthedocs.io)
 
 NodeJS module to manipulate French SIREN / SIRET or VAT Number in either way.
 This module will also retrieve legals informations such as legal form, company name, capital
