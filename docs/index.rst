@@ -19,7 +19,7 @@ and adress from valid SIRET, SIREN or VAT numbers using French State OpenData Ap
 .. |licence| image:: https://img.shields.io/github/license/startxfr/siren2tva.svg
    :align: middle
    :alt: licence
-.. _licence: https://github.com/startxfr/siren2tva/blob/master/LICENSE
+.. _licence: https://github.com/startxfr/siren2tva/blob/1.2.0/LICENSE
 
 ********
 Features
@@ -261,7 +261,7 @@ References
 .. _`npm`: https://www.npmjs.com
 .. _`siret module`: https://github.com/steevelefort/siret
 .. _`OpenData GovFr`: https://entreprise.data.gouv.fr
-.. _`contributing guide`: https://github.com/startxfr/sxapi-core/tree/master/docs/5.Contribute.md
+.. _`contributing guide`: https://github.com/startxfr/sxapi-core/tree/1.2.0/docs/5.Contribute.md
 .. _`startx`: https://www.startx.fr
-.. _`CONTRIBUTORS.md`: https://github.com/startxfr/sxapi-core/tree/master/docs/CONTRIBUTORS.md
-.. _`LICENSE`: https://github.com/startxfr/siren2tva/tree/master/LICENSE
+.. _`CONTRIBUTORS.md`: https://github.com/startxfr/sxapi-core/tree/1.2.0/docs/CONTRIBUTORS.md
+.. _`LICENSE`: https://github.com/startxfr/siren2tva/tree/1.2.0/LICENSE

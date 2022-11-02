@@ -53,12 +53,12 @@ If you run into difficulties installing or running siren2tva, you can [create an
 
 ## Contributing
 
-Read the [contributing guide](https://github.com/startxfr/sxapi-core/tree/master/docs/5.Contribute.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Read the [contributing guide](https://github.com/startxfr/sxapi-core/tree/1.2.0/docs/5.Contribute.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
-This project is mainly developped by the [startx](https://www.startx.fr) dev team. You can see the complete list of contributors who participated in this project by reading [CONTRIBUTORS.md](https://github.com/startxfr/sxapi-core/tree/master/docs/CONTRIBUTORS.md).
+This project is mainly developped by the [startx](https://www.startx.fr) dev team. You can see the complete list of contributors who participated in this project by reading [CONTRIBUTORS.md](https://github.com/startxfr/sxapi-core/tree/1.2.0/docs/CONTRIBUTORS.md).
 
 ## License
 
-This project is licensed under the Apache License Version 2.0 - see the [LICENSE](https://github.com/startxfr/siren2tva/tree/master/LICENSE) file for details
+This project is licensed under the Apache License Version 2.0 - see the [LICENSE](https://github.com/startxfr/siren2tva/tree/1.2.0/LICENSE) file for details
