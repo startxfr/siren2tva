@@ -3,6 +3,7 @@
 var checkSiret = require('siret');
 var config = {
   codePays: "FR",
+  // Deprecated and should mode to https://data.inpi.fr/
   inseeApiBase: "https://entreprise.data.gouv.fr/api/sirene/v3/",
   inseeApiSearchSiren: "unites_legales/",
   inseeApiSearchSiret: "etablissements/",
