@@ -42,6 +42,6 @@
   "dependencies": {
     "merge": "^2.1.1",
     "siret": "~1.0.1",
-    "urllib": "^2.37.4"
+    "urllib": "^2.41.0"
   }
 }
